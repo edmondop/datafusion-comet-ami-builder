@@ -7,8 +7,8 @@ in
     rustc = pkgs.rustc;
     cargo = pkgs.cargo;
   };
-  jdk13 = pkgs.callPackage ./datafusion-builder.nix {
-    jdk = pkgs.jdk13;
+  jdk17 = pkgs.callPackage ./datafusion-builder.nix {
+    jdk = pkgs.jdk17;
     sparkVersion = "3.4";
     rustc = pkgs.rustc;
     cargo = pkgs.cargo;
