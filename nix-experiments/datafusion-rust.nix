@@ -3,7 +3,7 @@ let
 
     rustPlatform.buildRustPackage rec {
       pname = "datafusion-comet";
-      version = "0.1.1";
+      version = "68efa57740534990734062e2b18df694f46572e6";
 
 
       src =
@@ -12,7 +12,7 @@ let
             owner = "apache";
             repo = "datafusion-comet";
             rev = version;
-            hash = "sha256-FLjU9ShHy2oF8blzvXgcVOCJCjMjsLj+GdvURsYwTts=";
+            hash = "sha256-tOsPAxvNuOKh+dznhHHWKP3ejF1ZvvZt70qKJJwrFdw=";
           };
         in
         runCommand "get-rust-code" { } ''cp -r ${gitSource}/core $out'';
