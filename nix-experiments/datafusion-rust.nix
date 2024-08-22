@@ -1,10 +1,13 @@
 let
-  builder = { fetchFromGitHub, rustPlatform, runCommand }:
+  builder = { fetchFromGitHub, rustPlatform, runCommand, protobuf }:
 
     rustPlatform.buildRustPackage rec {
       pname = "datafusion-comet";
       version = "68efa57740534990734062e2b18df694f46572e6";
-
+    
+      nativeBuildInputs = [
+        protobuf
+      ];
 
       src =
         let
@@ -25,4 +28,4 @@ let
 
   pkgs = import <nixpkgs> { };
 in
-pkgs.callPackage builder { fetchFromGitHub = pkgs.fetchFromGitHub; rustPlatform = pkgs.rustPlatform; runCommand = pkgs.runCommand; }
+pkgs.callPackage builder { fetchFromGitHub = pkgs.fetchFromGitHub; rustPlatform = pkgs.rustPlatform; runCommand = pkgs.runCommand; protobuf = pkgs.protobuf; }
